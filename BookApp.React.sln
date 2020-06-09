@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookApp.React", "BookApp.React\BookApp.React.csproj", "{9B0A6FC0-7A64-45A4-BCB5-55F973680421}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookApp.React", "BookApp.React\BookApp.React.csproj", "{9B0A6FC0-7A64-45A4-BCB5-55F973680421}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "BookApp.SqlServer", "BookApp.SqlServer\BookApp.SqlServer.sqlproj", "{0E4AFE73-E83E-41FE-A0F0-F1075A925EA0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,12 @@ Global
 		{9B0A6FC0-7A64-45A4-BCB5-55F973680421}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B0A6FC0-7A64-45A4-BCB5-55F973680421}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B0A6FC0-7A64-45A4-BCB5-55F973680421}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E4AFE73-E83E-41FE-A0F0-F1075A925EA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E4AFE73-E83E-41FE-A0F0-F1075A925EA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E4AFE73-E83E-41FE-A0F0-F1075A925EA0}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{0E4AFE73-E83E-41FE-A0F0-F1075A925EA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E4AFE73-E83E-41FE-A0F0-F1075A925EA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E4AFE73-E83E-41FE-A0F0-F1075A925EA0}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
