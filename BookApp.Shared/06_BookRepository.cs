@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Dul.Articles;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -60,7 +61,7 @@ namespace BookApp.Shared
                 //.Include(m => m.BooksLinks)
                 .SingleOrDefaultAsync(m => m.Id == id);
 
-            return model; 
+            return model;
         }
         #endregion
 
@@ -97,8 +98,16 @@ namespace BookApp.Shared
                 _logger?.LogError($"ERROR({nameof(DeleteAsync)}): {e.Message}");
             }
 
-            return false; 
-        } 
+            return false;
+        }
         #endregion
+
+        #region [6][6] 필터링: GetArticlesAsync
+        //[6][6] 필터링
+        public Task<ArticleSet<Book, int>> GetArticlesAsync<TParentIdentifier>(int pageIndex, int pageSize, string searchField, string searchQuery, string sortOrder, TParentIdentifier parentIdentifier)
+        {
+            throw new NotImplementedException();
+        }
+        #endregion    
     }
 }
