@@ -10,6 +10,7 @@ export class BooksIndex extends Component {
             loading: true
         };
 
+        this.goCreatePage = this.goCreatePage.bind(this); 
         this.editBy = this.editBy.bind(this);
         this.deleteBy = this.deleteBy.bind(this); 
     }
@@ -54,15 +55,21 @@ export class BooksIndex extends Component {
     }
 
     goCreatePage() {
-        console.log("Create");
+        //console.log("Create");
+        const { history } = this.props;
+        history.push('/Books/Create');
     }
 
     editBy(id) {
-        console.log("Edit by " + id);
+        //console.log("Edit by " + id);
+        const { history } = this.props;
+        history.push("/Books/Edit/" + id);
     }
 
     deleteBy(id) {
-        console.log("Delete by " + id);
+        //console.log("Delete by " + id);
+        const { history } = this.props;
+        history.push("/Books/Delete/" + id);
     }
 
     render() {
