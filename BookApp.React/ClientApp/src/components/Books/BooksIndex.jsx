@@ -10,6 +10,11 @@ export class BooksIndex extends Component {
         };
     }
 
+    // OnInitialized() 
+    componentDidMount() {
+        this.populateBooksData();
+    }
+
     // 책 리스트 테이블 출력
     static renderBooksTable(books) {
         return (
@@ -48,5 +53,11 @@ export class BooksIndex extends Component {
                 {contents}
             </div>
         );
+    }
+
+    async populateBooksData() {
+        const response = await fetch('/api/Books');
+        const data = await response.json();
+        this.setState({ books: data, loading: false });
     }
 }
