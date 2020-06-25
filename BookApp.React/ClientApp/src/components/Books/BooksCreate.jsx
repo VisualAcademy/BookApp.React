@@ -22,9 +22,9 @@ export class BooksCreate extends Component {
             title: e.target.value
         });
     }
-    handleChangeDescription(e) {
+    handleChangeDescription(event) {
         this.setState({
-            description: e.target.value
+            description: event.target.value
         });
     }
 
