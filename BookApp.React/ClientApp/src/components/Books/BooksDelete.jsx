@@ -33,6 +33,10 @@ export class BooksDelete extends React.Component {
         });
     }
 
+    componentDidUpdate() {
+        console.log("컴포넌트 업데이트");
+    }
+
     handleChangeTitle(e) {
         this.setState({
             title: e.target.value
