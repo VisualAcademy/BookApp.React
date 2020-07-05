@@ -15,7 +15,7 @@ export class BooksIndex extends Component {
         this.deleteBy = this.deleteBy.bind(this); 
     }
 
-    // OnInitialized() 
+    // 페이지가 로드되었을 때 Web API 호출해서 JSON 데이터 가져오기: OnInitialized() 
     componentDidMount() {
         //this.populateBooksData();
         //this.populateBooksDataWithAxios();
@@ -80,20 +80,21 @@ export class BooksIndex extends Component {
         return (
             <div>
                 <h1>My Books <button onClick={this.goCreatePage} className="btn btn-primary"><span className="fa fa-plus">+</span></button></h1>
-                <h2>제가 집필한 책입니다.</h2> 
+                <h2 style={{ fontStyle: "italic" }}>제가 집필한 책입니다.</h2> 
                 {contents}
             </div>
         );
     }
 
-    // Fetch API 
+    //[!] Web API 호출하는 3가지 모양 
+    //[1] Fetch API 
     async populateBooksData() {
         const response = await fetch('/api/Books');
         const data = await response.json();
         this.setState({ books: data, loading: false });
     }
 
-    // Axios + Async
+    //[2] Axios + Async
     populateBooksDataWithAxios() {
         axios.get("/api/Books").then(response => {
             const data = response.data;
@@ -101,7 +102,7 @@ export class BooksIndex extends Component {
         });
     }
 
-    // Axios + Async
+    //[3] Axios + Async
     async populateBooksDataWithAxiosAsync() {
         const response = await axios.get("/api/Books");
         const data = response.data;

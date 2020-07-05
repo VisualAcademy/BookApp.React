@@ -11,24 +11,20 @@ export class BooksCreate extends Component {
             created: null,
         };
 
-        // 이벤트 바인딩
+        //[!] 이벤트 바인딩
+        //[1] 함수로 이벤트 처리기 만들고 생성자에서 바인딩
         this.handleChangeTitle = this.handleChangeTitle.bind(this); 
-        //this.handleChangeDescription = this.handleChangeDescription.bind(this); 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.goIndex = this.goIndex.bind(this); 
+
+        //[2] 화살표 함수(람다 식)로 이벤트 핸들러 바인딩
+        //this.handleChangeDescription = this.handleChangeDescription.bind(this); 
     }
 
     //[1] 함수로 이벤트 처리기 만들고 생성자에서 바인딩
     handleChangeTitle(e) {
         this.setState({
             title: e.target.value
-        });
-    }
-
-    //[2] 화살표 함수(람다 식)로 이벤트 핸들러 바인딩
-    handleChangeDescription = (event) => {
-        this.setState({
-            description: event.target.value
         });
     }
 
@@ -47,6 +43,13 @@ export class BooksCreate extends Component {
 
         axios.post("/api/Books", bookDto).then(result => {
             this.goIndex();
+        });
+    }
+
+    //[2] 화살표 함수(람다 식)로 이벤트 핸들러 바인딩
+    handleChangeDescription = (event) => {
+        this.setState({
+            description: event.target.value
         });
     }
 

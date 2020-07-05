@@ -18,10 +18,10 @@ export class BooksEdit extends Component {
     }
 
     componentDidMount() {
-        // id Parameter 받기
+        //[!] id Parameter 받기
         const { id } = this.props.match.params;
 
-        // id 값에 해당하는 단일 데이터를 Web API로부터 읽어오기
+        //[!] id 값에 해당하는 단일 데이터를 Web API로부터 읽어오기
         axios.get("/api/Books/" + id).then(response => {
             const data = response.data;
 
@@ -50,7 +50,7 @@ export class BooksEdit extends Component {
     }
 
     handleSubmit(e) {
-        e.preventDefault();
+        e.preventDefault(); // 버튼, 링크 등의 고유 기능을 제거하고 React 기능만 사용
 
         const { id } = this.props.match.params;
 

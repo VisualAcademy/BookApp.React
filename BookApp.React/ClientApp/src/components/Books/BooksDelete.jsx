@@ -1,7 +1,7 @@
-﻿import React, { Component } from 'react';
+﻿import React from 'react';
 import axios from 'axios';
 
-export class BooksDelete extends Component {
+export class BooksDelete extends React.Component {
     constructor(props) {
         super(props);
 
@@ -18,10 +18,10 @@ export class BooksDelete extends Component {
     }
 
     componentDidMount() {
-        // id Parameter 받기
+        //[!] id Parameter 받기: 쿼리스트링으로 넘어온 값 받기 
         const { id } = this.props.match.params;
 
-        // id 값에 해당하는 단일 데이터를 Web API로부터 읽어오기
+        //[!] id 값에 해당하는 단일 데이터를 Web API로부터 읽어오기
         axios.get("/api/Books/" + id).then(response => {
             const data = response.data;
 
@@ -38,6 +38,7 @@ export class BooksDelete extends Component {
             title: e.target.value
         });
     }
+
     handleChangeDescription(e) {
         this.setState({
             description: e.target.value
