@@ -16,6 +16,7 @@ namespace BookApp.Shared
     /// </summary>
     public interface IBookCrudRepository<T> : ICrudRepositoryBase<T, int>
     {
+        // PM> Install-Package Dul
         // Empty
     }
 }
