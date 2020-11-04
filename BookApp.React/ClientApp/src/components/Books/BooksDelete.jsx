@@ -14,7 +14,7 @@ export class BooksDelete extends React.Component {
         this.handleChangeTitle = this.handleChangeTitle.bind(this);
         this.handleChangeDescription = this.handleChangeDescription.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.goIndex = this.goIndex.bind(this);
+        this.goIndex = this.navigateToIndex.bind(this);
     }
 
     componentDidMount() {
@@ -49,7 +49,7 @@ export class BooksDelete extends React.Component {
         });
     }
 
-    goIndex() {
+    navigateToIndex() {
         const { history } = this.props;
         history.push("/Books");
     }
@@ -62,7 +62,7 @@ export class BooksDelete extends React.Component {
             const { id } = this.props.match.params;
 
             axios.delete("/api/Books/" + id).then(result => {
-                this.goIndex();
+                this.navigateToIndex();
             });
         }
         else {
@@ -98,7 +98,7 @@ export class BooksDelete extends React.Component {
                             <div className="form-group">
                                 <button type="submit" className="btn btn-danger">Delete</button>
                                 &nbsp;
-                                <button className="btn btn-secondary" onClick={this.goIndex}>Cancel</button>
+                                <button className="btn btn-secondary" onClick={this.navigateToIndex}>Cancel</button>
                             </div>
                         </form>
                     </div>

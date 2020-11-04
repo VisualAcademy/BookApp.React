@@ -12,7 +12,7 @@ export class BooksIndex extends Component {
 
         // 콜백에서 `this`가 작동하려면 아래와 같이 바인딩 해주어야 합니다.
         // https://ko.reactjs.org/docs/handling-events.html
-        this.goCreatePage = this.goCreatePage.bind(this); 
+        this.goCreatePage = this.navigateToCreate.bind(this); 
         this.editBy = this.editBy.bind(this);
         this.deleteBy = this.deleteBy.bind(this); 
     }
@@ -56,7 +56,7 @@ export class BooksIndex extends Component {
         );
     }
 
-    goCreatePage() {
+    navigateToCreate() {
         //console.log("Create");
         const { history } = this.props;
         history.push('/Books/Create');
@@ -81,7 +81,7 @@ export class BooksIndex extends Component {
 
         return (
             <div>
-                <h1>My Books <button onClick={this.goCreatePage} className="btn btn-primary"><span className="fa fa-plus">+</span></button></h1>
+                <h1>My Books <button onClick={this.navigateToCreate} className="btn btn-primary"><span className="fa fa-plus">+</span></button></h1>
                 <h2 style={{ fontStyle: "italic" }}>제가 집필한 책입니다.</h2> 
                 {contents}
             </div>

@@ -15,7 +15,7 @@ export class BooksCreate extends Component {
         //[1] 함수로 이벤트 처리기 만들고 생성자에서 바인딩
         this.handleChangeTitle = this.handleChangeTitle.bind(this); 
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.goIndex = this.goIndex.bind(this); 
+        this.goIndex = this.navigateToIndex.bind(this); 
 
         //[2] 화살표 함수(람다 식)로 이벤트 핸들러 바인딩
         //this.handleChangeDescription = this.handleChangeDescription.bind(this); 
@@ -28,7 +28,7 @@ export class BooksCreate extends Component {
         });
     }
 
-    goIndex() {
+    navigateToIndex() {
         const { history } = this.props;
         history.push("/Books");
     }
@@ -42,7 +42,7 @@ export class BooksCreate extends Component {
         };
 
         axios.post("/api/Books", bookDto).then(result => {
-            this.goIndex();
+            this.navigateToIndex();
         });
     }
 
@@ -81,7 +81,7 @@ export class BooksCreate extends Component {
                             <div className="form-group">
                                 <button type="submit" className="btn btn-primary">Submit</button>
                                 &nbsp;
-                                <button className="btn btn-secondary" onClick={this.goIndex}>List</button>
+                                <button className="btn btn-secondary" onClick={this.navigateToIndex}>List</button>
                             </div>
                         </form>
                     </div>

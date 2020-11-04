@@ -14,7 +14,7 @@ export class BooksEdit extends Component {
         this.handleChangeTitle = this.handleChangeTitle.bind(this);
         this.handleChangeDescription = this.handleChangeDescription.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.goIndex = this.goIndex.bind(this);
+        this.goIndex = this.navigateToIndex.bind(this);
     }
 
     componentDidMount() {
@@ -44,7 +44,7 @@ export class BooksEdit extends Component {
         });
     }
 
-    goIndex() {
+    navigateToIndex() {
         const { history } = this.props;
         history.push("/Books");
     }
@@ -61,7 +61,7 @@ export class BooksEdit extends Component {
         };
 
         axios.put("/api/Books/" + id, bookDto).then(result => {
-            this.goIndex();
+            this.navigateToIndex();
         });
     }
 
@@ -93,7 +93,7 @@ export class BooksEdit extends Component {
                             <div className="form-group">
                                 <button type="submit" className="btn btn-primary">Submit</button>
                                 &nbsp;
-                                <button className="btn btn-secondary" onClick={this.goIndex}>Cancel</button>
+                                <button className="btn btn-secondary" onClick={this.navigateToIndex}>Cancel</button>
                             </div>
                         </form>
                     </div>
