@@ -14,7 +14,7 @@ export class BooksEdit extends Component {
         this.handleChangeTitle = this.handleChangeTitle.bind(this);
         this.handleChangeDescription = this.handleChangeDescription.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.goIndex = this.navigateToIndex.bind(this);
+        this.navigateToIndex = this.navigateToIndex.bind(this);
     }
 
     componentDidMount() {
@@ -28,7 +28,7 @@ export class BooksEdit extends Component {
             this.setState({
                 title: data.title,
                 description: data.description,
-                created: data.created
+                created: data.created ? new Date(data.created).toISOString().slice(0, 10) : null
             });
         });
     }

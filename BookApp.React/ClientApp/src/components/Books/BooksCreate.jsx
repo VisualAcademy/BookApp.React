@@ -15,7 +15,7 @@ export class BooksCreate extends Component {
         //[1] 함수로 이벤트 처리기 만들고 생성자에서 바인딩
         this.handleChangeTitle = this.handleChangeTitle.bind(this); 
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.goIndex = this.navigateToIndex.bind(this); 
+        this.navigateToIndex = this.navigateToIndex.bind(this); 
 
         //[2] 화살표 함수(람다 식)로 이벤트 핸들러 바인딩
         //this.handleChangeDescription = this.handleChangeDescription.bind(this); 

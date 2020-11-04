@@ -14,7 +14,7 @@ export class BooksDelete extends React.Component {
         this.handleChangeTitle = this.handleChangeTitle.bind(this);
         this.handleChangeDescription = this.handleChangeDescription.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.goIndex = this.navigateToIndex.bind(this);
+        this.navigateToIndex = this.navigateToIndex.bind(this);
     }
 
     componentDidMount() {
