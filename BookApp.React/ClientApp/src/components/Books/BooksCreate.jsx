@@ -34,7 +34,7 @@ export class BooksCreate extends Component {
     }
 
     handleSubmit(e) {
-        e.preventDefault();
+        e.preventDefault(); // 이벤트 기본 작업 방지: 버튼, 링크 등의 고유 기능을 제거하고 React 기능만 사용
 
         let bookDto = {
             title: this.state.title,

@@ -56,7 +56,7 @@ export class BooksDelete extends React.Component {
 
     // 삭제 버튼 클릭
     handleSubmit(e) {
-        e.preventDefault();
+        e.preventDefault(); // 이벤트 기본 작업 방지: 버튼, 링크 등의 고유 기능을 제거하고 React 기능만 사용
 
         if (window.confirm("정말로 삭제하시겠습니까?")) {
             const { id } = this.props.match.params;
