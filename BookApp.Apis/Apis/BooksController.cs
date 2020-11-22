@@ -24,7 +24,7 @@ namespace BookApp.Apis.Controllers
         #region 출력
         // 출력
         // GET api/Books
-        [HttpGet] // [HttpGet("[action]")]
+        [HttpGet] // [HttpGet("[action]")] // @GetMapping
         public async Task<IActionResult> GetAll()
         {
             try
@@ -71,7 +71,7 @@ namespace BookApp.Apis.Controllers
         #region 입력
         // 입력
         // POST api/Books
-        [HttpPost]
+        [HttpPost] // PostMapping
         public async Task<IActionResult> AddAsync([FromBody] Book dto)
         {
             if (!ModelState.IsValid)
