@@ -2,6 +2,10 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageId>Dul.BookApp.Shared</PackageId>
+    <Authors>RedPlus</Authors>
+    <Company>Hawaso</Company>
+    <Description>BookApp.Shard CRUD APIs</Description>
   </PropertyGroup>
 
   <ItemGroup>
