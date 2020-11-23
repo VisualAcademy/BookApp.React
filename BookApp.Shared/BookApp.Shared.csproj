@@ -6,6 +6,7 @@
     <Authors>RedPlus</Authors>
     <Company>Hawaso</Company>
     <Description>BookApp.Shard CRUD APIs</Description>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>

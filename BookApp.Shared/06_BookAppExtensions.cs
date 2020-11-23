@@ -12,7 +12,7 @@ namespace BookApp.Shared
         public static void AddDependencyInjectionContainerForBookApp(this IServiceCollection services, IConfiguration configuration)
         {
             // BookAppDbContext.cs Inject: New DbContext Add
-            services.AddEntityFrameworkSqlServer().AddDbContext<BookAppDbContext>(options =>
+            services.AddDbContext<BookAppDbContext>(options =>
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")), ServiceLifetime.Transient);
 
             // IBookRepository.cs Inject: DI Container에 서비스(리포지토리) 등록 
@@ -21,7 +21,7 @@ namespace BookApp.Shared
         public static void AddDependencyInjectionContainerForBookApp(this IServiceCollection services, string connectionString)
         {
             // BookAppDbContext.cs Inject: New DbContext Add
-            services.AddEntityFrameworkSqlServer().AddDbContext<BookAppDbContext>(options =>
+            services.AddDbContext<BookAppDbContext>(options =>
                 options.UseSqlServer(connectionString), ServiceLifetime.Transient);
 
             // IBookRepository.cs Inject: DI Container에 서비스(리포지토리) 등록 
