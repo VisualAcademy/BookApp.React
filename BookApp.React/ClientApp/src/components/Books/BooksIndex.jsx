@@ -108,6 +108,8 @@ export class BooksIndex extends Component {
     async populateBooksDataWithAxiosAsync() {
         const response = await axios.get("/api/Books");
         const data = response.data;
-        this.setState({ books: data, loading: false });
+        if (data) {
+            this.setState({ books: data, loading: false });
+        }
     }
 }
