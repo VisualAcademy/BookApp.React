@@ -1,4 +1,4 @@
-using BookApp.Shared;
+ï»¿using BookApp.Shared;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
@@ -18,13 +18,12 @@ namespace BookApp.React
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
 
-            // BookApp °ü·Ã ÀÇÁ¸¼º(Á¾¼Ó¼º) ÁÖÀÔ °ü·Ã ÄÚµå¸¸ µû·Î ¸ð¾Æ¼­ °ü¸® 
-            AddDependencyInjectionContainerForBookApp(services);
+            // BookApp ê´€ë ¨ ì˜ì¡´ì„±(ì¢…ì†ì„±) ì£¼ìž… ê´€ë ¨ ì½”ë“œë§Œ ë”°ë¡œ ëª¨ì•„ì„œ ê´€ë¦¬ 
+            services.AddDependencyInjectionContainerForBookApp(Configuration.GetConnectionString("DefaultConnection"));
 
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
@@ -33,20 +32,6 @@ namespace BookApp.React
             });
         }
 
-        /// <summary>
-        /// BookApp °ü·Ã ÀÇÁ¸¼º(Á¾¼Ó¼º) ÁÖÀÔ °ü·Ã ÄÚµå¸¸ µû·Î ¸ð¾Æ¼­ °ü¸® 
-        /// </summary>
-        private void AddDependencyInjectionContainerForBookApp(IServiceCollection services)
-        {
-            // BookAppDbContext.cs Inject: New DbContext Add
-            services.AddEntityFrameworkSqlServer().AddDbContext<BookAppDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-
-            // IBookRepository.cs Inject: DI Container¿¡ ¼­ºñ½º(¸®Æ÷ÁöÅä¸®) µî·Ï 
-            services.AddTransient<IBookRepository, BookRepository>();
-        }
-
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
